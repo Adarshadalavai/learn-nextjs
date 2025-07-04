@@ -6,7 +6,7 @@ import { BlogPostCard } from "@/components/general/BlogPostCard";
 import { Suspense } from "react";
 import { BlogPostsGrid } from "@/components/general/BlogPostGrid";
 
-export async function getData(userId: string) {
+async function getData(userId: string) {
   // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate a delay for loading state
   const data = await prisma.blogPost.findMany({
     where: {
@@ -35,7 +35,7 @@ export default async function Dashboard() {
 
       {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data.map((item) => (
-          <BlogPostCard data={item} key={item.id} />
+          <BlogPostCard data={item} key={item.id} /> 
         ))}
       </div> */}
 
