@@ -50,7 +50,11 @@ async function DashboardBlogs() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  const data = await getData(user?.id as string);
+  if (!user?.id) {
+    return <div>No user found.</div>;
+  }
+
+  const data = await getData(user.id);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
