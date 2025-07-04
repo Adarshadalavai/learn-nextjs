@@ -1,8 +1,6 @@
 import { BlogPostCard } from "@/components/general/BlogPostCard";
 import { prisma } from "./utils/db";
 import { Suspense } from "react";
-import Loading from "./dashboard/loading";
-import { Skeleton } from "@/components/ui/skeleton";
 import { BlogPostsGrid } from "@/components/general/BlogPostGrid";
 
 async function getPosts() {
