@@ -3,6 +3,8 @@ import { prisma } from "./utils/db";
 import { Suspense } from "react";
 import { BlogPostsGrid } from "@/components/general/BlogPostGrid";
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 async function getPosts() {
   const data = await prisma.blogPost.findMany({
     select: {
